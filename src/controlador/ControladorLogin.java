@@ -39,7 +39,7 @@ public class ControladorLogin implements ActionListener{
             FormPantPrincipal vistaPantPrincipal = new FormPantPrincipal();
             ControladorPantPrincipal controlador = new ControladorPantPrincipal(vistaPantPrincipal, modeloLogin);
             controlador.initFinal(codigo, password, usuario.getNombre());
-            switch(Integer.valueOf(usuario.getTipo())){
+            /*switch(Integer.valueOf(usuario.getTipo())){
                 case 1:
                     //vistaPantPrincipal.Formulador.setEnabled(false);
                     //vistaPantPrincipal.Digitador.setEnabled(false);
@@ -54,9 +54,9 @@ public class ControladorLogin implements ActionListener{
                     //vistaPantPrincipal.Formulador.setEnabled(false); 
                     //vistaPantPrincipal.MantenimientoSecundario.setEnabled(false);
                 break;
-            }
-            //vistaPantPrincipal.setVisible(true);
-            //vistaPantPrincipal.setLocationRelativeTo(null);
+            }*/
+            vistaPantPrincipal.setVisible(true);
+            vistaPantPrincipal.setLocationRelativeTo(null);
             vistaLogin.setVisible(false);
         }
     }
