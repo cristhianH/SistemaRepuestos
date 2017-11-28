@@ -16,20 +16,15 @@ public class Proveedor {
     private String RUC;
     private String email;
     private String telefono;
-    private String codVendedor;
-    private String telVendedor;
 
-    public Proveedor(String codigo, String nombre, String direccion, String RUC, String email, String telefono, String codVendedor, String telVendedor) {
+    public Proveedor(String codigo, String nombre, String direccion, String RUC, String email, String telefono) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.direccion = direccion;
         this.RUC = RUC;
         this.email = email;
         this.telefono = telefono;
-        this.codVendedor = codVendedor;
-        this.telVendedor = telVendedor;
     }
-
     public String getCodigo() {
         return codigo;
     }
