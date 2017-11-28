@@ -127,4 +127,16 @@ public class ClienteDAO {
         }
         return listaUsuario;
     }
+
+    public boolean insertCliente(ClienteDAO clienteDAO) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean modificarCliente(Cliente usuario, String campo, String informacion) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean eliminarCliente(Cliente usuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
