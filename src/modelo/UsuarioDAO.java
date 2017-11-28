@@ -8,6 +8,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class UsuarioDAO {
+
     Conexion conexion;
     
     public UsuarioDAO(){
@@ -38,7 +39,25 @@ public class UsuarioDAO {
         }
         return usuario;
     }
-    
+    public Boolean insertUsuario(Usuario usuario) {
+        Boolean q=false;
+        try{
+            Connection accesoDB = conexion.getConexion();
+            CallableStatement cs = accesoDB.prepareCall("INSERT INTO `qbank`.`USUARIO` (`UsuCod`, `UsuNom`, `UsuContra`, `UsuTip`, `UsuEstReg`) VALUES (NULL, ?, ?, ?, ?);");
+            cs.setString(1, usuario.getNombre());
+            cs.setString(2, usuario.getContraseña());
+            cs.setString(3, usuario.getTipo());
+            cs.setString(4, "A");
+            
+            int numFAfectadas = cs.executeUpdate();
+            if(numFAfectadas > 0)
+                q=true;
+            accesoDB.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return q;
+    }
     public String insertUsuario(String nombre, String contraseña, String tipo){
         String rptaRegistro = null;
         try{
@@ -58,7 +77,26 @@ public class UsuarioDAO {
         }
         return rptaRegistro;
     }
-    
+    public Boolean modificarUsuario(Usuario usuario){
+        Boolean rptaRegistro = false;
+        try{
+            Connection accesoDB = conexion.getConexion();
+            CallableStatement cs = accesoDB.prepareCall("UPDATE  `qbank`.`USUARIO` SET  `UsuNom` = ?,`UsuContra` =  ?,`UsuTip` =  ?,`UsuEstReg` =  ? WHERE  `USUARIO`.`UsuCod` =?");
+            cs.setString(1, usuario.getNombre());
+            cs.setString(2, usuario.getContraseña());
+            cs.setString(3, usuario.getTipo());
+            cs.setString(4, "A");
+            cs.setString(5, usuario.getCodigo());
+            
+            int numFAfectadas = cs.executeUpdate();
+            if(numFAfectadas > 0)
+                rptaRegistro=true;
+            accesoDB.close();
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        return rptaRegistro;
+    }
     public String modificarUsuario(String codigo, String nombre, String contraseña, String tipo){
         String rptaRegistro = null;
         try{
@@ -118,5 +156,13 @@ public class UsuarioDAO {
             e.printStackTrace();
         }
         return listaUsuario;
+    }   
+
+    public boolean modificarContraseña(Usuario usuario, String contraAntigua, String contraNueva) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    public boolean eliminarUsuario(Usuario usuario) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

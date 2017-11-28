@@ -13,6 +13,20 @@ public class Usuario {
 		this.tipo = "";
 		EstRegistro = "";
 	}
+        public Usuario(String codigo, String contraseña) {
+		this.codigo = codigo;
+		this.nombre = "";
+		this.contraseña = contraseña;
+		this.tipo = "";
+		EstRegistro = "";
+	}
+        public Usuario(String codigo, String contraseña,String Tipo) {
+		this.codigo = codigo;
+		this.nombre = "";
+		this.contraseña = contraseña;
+		this.tipo = "";
+		EstRegistro = "";
+	}
 	public String getCodigo() {
 		return codigo;
 	}

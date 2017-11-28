@@ -27,29 +27,15 @@ public class FormLogin extends javax.swing.JFrame {
         labelPassword = new javax.swing.JLabel();
         FieldCodigo = new javax.swing.JTextField();
         FieldPassword = new javax.swing.JPasswordField();
-        ButtonIngresar = new javax.swing.JButton();
         ButtonSalir = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("login");
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        labelCodigo.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        labelCodigo.setForeground(new java.awt.Color(255, 255, 255));
         labelCodigo.setText("Codigo:");
-        getContentPane().add(labelCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 270, -1, -1));
 
-        labelPassword.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        labelPassword.setForeground(new java.awt.Color(255, 255, 255));
         labelPassword.setText("password:");
-        getContentPane().add(labelPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 300, -1, -1));
-        getContentPane().add(FieldCodigo, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 270, 126, -1));
-        getContentPane().add(FieldPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 300, 126, -1));
-
-        ButtonIngresar.setText("Ingresar");
-        getContentPane().add(ButtonIngresar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 340, -1, -1));
 
         ButtonSalir.setText("Salir");
         ButtonSalir.addActionListener(new java.awt.event.ActionListener() {
@@ -57,15 +43,53 @@ public class FormLogin extends javax.swing.JFrame {
                 ButtonSalirActionPerformed(evt);
             }
         });
-        getContentPane().add(ButtonSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 340, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/SecureNotes.png"))); // NOI18N
-        jLabel2.setText("jLabel2");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 40, 200, -1));
+        jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo ap.PNG"))); // NOI18N
-        jLabel1.setText("jLabel1");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 630, 420));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jButton1)
+                        .addGap(55, 55, 55)
+                        .addComponent(ButtonSalir))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(labelPassword)
+                            .addComponent(labelCodigo))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(FieldCodigo)
+                            .addComponent(FieldPassword, javax.swing.GroupLayout.DEFAULT_SIZE, 126, Short.MAX_VALUE))))
+                .addContainerGap(61, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelCodigo)
+                    .addComponent(FieldCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelPassword)
+                    .addComponent(FieldPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(ButtonSalir)
+                    .addComponent(jButton1))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -75,6 +99,12 @@ public class FormLogin extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_ButtonSalirActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+   
     /**
      * @param args the command line arguments
      */
@@ -114,12 +144,10 @@ public class FormLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton ButtonIngresar;
     public javax.swing.JButton ButtonSalir;
     public javax.swing.JTextField FieldCodigo;
     public javax.swing.JPasswordField FieldPassword;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel labelCodigo;
     private javax.swing.JLabel labelPassword;
     // End of variables declaration//GEN-END:variables
